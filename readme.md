@@ -1,5 +1,5 @@
 # About
-A simple version of the abstract board game <a href="https://en.wikipedia.org/wiki/Nine_Men%27s_Morris">Nine Men's Morris</a>
+A simple version of the abstract board game <a href="https://en.wikipedia.org/wiki/Nine_Men%27s_Morris" target="_blank">Nine Men's Morris</a>
 
 <div>
 <a href="//gotankersley.github.io/9mm/">
