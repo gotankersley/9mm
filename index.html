@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">		  
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>9mm</title>
+<link rel="shortcut icon" href="img/favicon.ico" />	
+<link rel="stylesheet" href="css/9mm.css"/>
+
+<script src="js/dat.gui.min.js"></script>
+<script src="js/9mm.min.js"></script>
+
+</head>
+<body>
+<canvas id="pinCanvas" width="1000" height="50" style="display:block"></canvas>
+<canvas id="mainCanvas" width="700" height="700"></canvas>
+<!--<iframe id="viz" scrolling="no" frameBorder="0"></iframe>-->
+<button id="analyze" class="plain-button">Analyze</button>
+<button id="clear-analyze" class="plain-button">Clear</button>
+<div id="message"></div>
+<script>
+	var menu;
+	Url.init(function(e) {
+		var hash = window.location.hash.replace('#', '');		
+		if (hash.length == 28) game.updateBoard( new Board(hash));
+	});
+	
+	var boardStr;
+	if (performance.navigation.type == 0) { //First time on this page
+		var hash = window.location.hash.replace('#', '');
+		if (hash.length == 28) boardStr = hash;		
+		else Url.setHash(''); //Clear state
+	}
+	else Url.setHash('');  //Refresh - clear state
+	
+	var game = new Game(boardStr);	
+	Stage.init(game); 
+		
+</script>
+<link rel="stylesheet" href="css/dat-gui-light.css"/><!-- needs to be last -->
+</body>
+</html>
